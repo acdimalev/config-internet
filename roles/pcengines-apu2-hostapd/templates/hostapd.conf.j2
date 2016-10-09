@@ -1,0 +1,19 @@
+# hostapd_cli
+ctrl_interface=/var/run/hostapd
+
+# basic configuration
+interface=wlan0
+ssid={{ ssid }}
+country_code={{ country_code }}
+
+# 802.11n n-only
+hw_mode=g
+wmm_enabled=1
+ieee80211n=1
+require_ht=1
+
+# 802.11i wpa2-only
+wpa=2
+wpa_passphrase={{ wpa_passphrase }}
+wpa_key_mgmt=WPA-PSK WPA-PSK-SHA256
+wpa_pairwise=CCMP

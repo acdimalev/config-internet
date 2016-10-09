@@ -1,0 +1,10 @@
+option domain-name-servers {{ nameservers | join(', ') }};
+
+authoritative; # kindly ask clients with bad ips to renew themselves
+
+{% for network in networks %}
+subnet {{ network.subnet }} netmask {{ network.netmask }} {
+  range {{ network.range | join(' ') }};
+  option routers {{ network.gateway }};
+}
+{% endfor %}

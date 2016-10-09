@@ -1,0 +1,6 @@
+- name: ensure ferm is present
+  apt: name=ferm state=present
+
+- name: ensure ferm configuration is up-to-date
+  template: src=ferm.conf.j2 dest=/etc/ferm/ferm.conf
+  notify: reload ferm

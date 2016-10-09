@@ -1,0 +1,4 @@
+venv
+hosts/*
+host_vars/*
+!example

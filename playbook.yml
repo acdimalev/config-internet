@@ -1,0 +1,16 @@
+- hosts: all
+  roles:
+
+  - role: pcengines-apu2-console
+
+  - role: pcengines-apu2-hostapd
+    # country_code
+    # ssid
+    passphrase: "{{ wpa_passphrase }}"
+
+  - role: nat-masquerade
+    interface: eth0
+
+  - role: dhcpd
+    interfaces: [wlan0]
+    networks: "{{ dhcpd.networks }}"

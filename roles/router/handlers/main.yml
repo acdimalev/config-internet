@@ -1,0 +1,2 @@
+- name: reload procps
+  service: name=procps state=reloaded

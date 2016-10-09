@@ -1,0 +1,6 @@
+- name: ensure grub defaults are patched
+  patch: src=etc-default-grub.patch dest=/etc/default/grub
+  notify: update grub
+
+- name: ensure inittab is patched
+  patch: src=etc-inittab.patch dest=/etc/inittab

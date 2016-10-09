@@ -1,0 +1,22 @@
+# http://www.tldp.org/HOWTO/html_single/Masquerading-Simple-HOWTO/
+
+table nat {
+    chain POSTROUTING {
+        outerface {{ interface }} MASQUERADE;
+    }
+}
+
+table filter {
+    chain FORWARD {
+        interface {{ interface }} outerface {{ interface }} REJECT;
+    }
+
+    chain INPUT {
+        policy DROP;
+
+        mod state state (ESTABLISHED RELATED) ACCEPT;
+        interface ! {{ interface }} {
+            mod state state NEW ACCEPT;
+        }
+    }
+}

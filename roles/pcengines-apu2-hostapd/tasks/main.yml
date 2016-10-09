@@ -1,0 +1,3 @@
+- name: ensure hostapd configuration is up-to-date
+  template: src=hostapd.conf.j2 dest=/etc/hostapd/hostapd.conf
+  notify: restart hostapd

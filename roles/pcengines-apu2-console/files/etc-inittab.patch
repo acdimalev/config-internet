@@ -1,0 +1,27 @@
+--- /etc/inittab.orig   2015-04-06 11:44:31.000000000 -0700
++++ /etc/inittab        2016-08-24 14:36:24.064010227 -0700
+@@ -51,17 +51,18 @@
+ # Note that on most Debian systems tty7 is used by the X Window System,
+ # so if you want to add more getty's go ahead but skip tty7 if you run X.
+ #
+-1:2345:respawn:/sbin/getty 38400 tty1
+-2:23:respawn:/sbin/getty 38400 tty2
+-3:23:respawn:/sbin/getty 38400 tty3
+-4:23:respawn:/sbin/getty 38400 tty4
+-5:23:respawn:/sbin/getty 38400 tty5
+-6:23:respawn:/sbin/getty 38400 tty6
++#1:2345:respawn:/sbin/getty 38400 tty1
++#2:23:respawn:/sbin/getty 38400 tty2
++#3:23:respawn:/sbin/getty 38400 tty3
++#4:23:respawn:/sbin/getty 38400 tty4
++#5:23:respawn:/sbin/getty 38400 tty5
++#6:23:respawn:/sbin/getty 38400 tty6
+ 
+ # Example how to put a getty on a serial line (for a terminal)
+ #
+ #T0:23:respawn:/sbin/getty -L ttyS0 9600 vt100
+ #T1:23:respawn:/sbin/getty -L ttyS1 9600 vt100
++T0:2345:respawn:/sbin/getty -L ttyS0 115200 vt100
+ 
+ # Example how to put a getty on a modem line.
+ #

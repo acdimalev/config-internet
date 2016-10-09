@@ -1,0 +1,10 @@
+country_code: US
+ssid: example
+wpa_passphrase: this-is-a-bad-passphrase
+
+dhcpd:
+  networks:
+  - subnet: 192.168.1.0
+    netmask: 255.255.255.0
+    gateway: 192.168.1.1
+    range: [192.168.1.100, 192.168.1.200]
