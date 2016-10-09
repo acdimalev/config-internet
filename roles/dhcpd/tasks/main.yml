@@ -1,7 +1,7 @@
 - name: ensure isc-dhcp-server is present
   apt: name=isc-dhcp-server state=present
 
-- name: ensure isc-dhcp-server default configuration is up-to-date
+- name: ensure isc-dhcp-server defaults are up-to-date
   template: src=etc-default-isc-dhcp-server.j2 dest=/etc/default/isc-dhcp-server
   notify: restart isc-dhcp-server
 
