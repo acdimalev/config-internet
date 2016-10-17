@@ -1,3 +1,7 @@
 - name: ensure hostapd configuration is up-to-date
   template: src=hostapd.conf.j2 dest=/etc/hostapd/hostapd.conf
   notify: restart hostapd
+
+- name: ensure hostapd defaults are up-to-date
+  file: src=etc-default-hostapd dest=/etc/default/hostapd
+  notify: restart hostapd
