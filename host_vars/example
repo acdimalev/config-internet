@@ -3,6 +3,8 @@ ssid: example
 wpa_passphrase: this-is-a-bad-passphrase
 
 dhcpd:
+  interfaces:
+  - wlan0
   networks:
   - subnet: 192.168.1.0
     netmask: 255.255.255.0

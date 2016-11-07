@@ -12,5 +12,5 @@
     interface: eth0
 
   - role: dhcpd
-    interfaces: [wlan0]
+    interfaces: "{{ dhcpd.interfaces }}"
     networks: "{{ dhcpd.networks }}"
