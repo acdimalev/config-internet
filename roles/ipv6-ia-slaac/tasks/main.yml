@@ -1,0 +1,17 @@
+- name: ensure wide-dhcpv6-client defaults are up-to-date
+  template:
+    dest: /etc/default/wide-dhcpv6-client
+    src: wide-dhcpv6-client-defaults.j2
+  notify: restart wide-dhcpv6-client
+
+- name: ensure `dhcp6c.conf` is up-to-date
+  template:
+    dest: /etc/wide-dhcpv6/dhcp6c.conf
+    src: dhcp6c.conf.j2
+  notify: restart wide-dhcpv6-client
+
+- name: ensure `radvd.conf` is up-to-date
+  template:
+    dest: /etc/radvd.conf
+    src: radvd.conf.j2
+  notify: restart radvd

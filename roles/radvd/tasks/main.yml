@@ -1,0 +1,10 @@
+- name: ensure radvd is installed
+  apt: name=radvd
+
+- name: ensure sysctl configuration is up-to-date
+  template:
+    dest: /etc/sysctl.d/radvd.conf
+    src: sysctl.conf.j2
+  notify:
+  - reload procps
+  - restart radvd

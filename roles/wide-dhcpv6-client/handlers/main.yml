@@ -1,0 +1,2 @@
+- name: restart wide-dhcpv6-client
+  service: name=wide-dhcpv6-client state=restarted

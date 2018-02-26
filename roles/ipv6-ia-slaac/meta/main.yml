@@ -1,0 +1,4 @@
+dependencies:
+- wide-dhcpv6-client
+- name: radvd
+  # uplink: "{{ uplink }}"

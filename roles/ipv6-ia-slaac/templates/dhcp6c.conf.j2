@@ -1,0 +1,19 @@
+profile default {
+  send ia-na 0;
+  send ia-pd 0;
+};
+
+id-assoc na 0 {
+};
+
+id-assoc pd 0 {
+  prefix ::/56 infinity;
+
+{% for interface in interfaces %}
+  prefix-interface {{ interface }} {
+    sla-id {{ loop.index }};
+    sla-len 8;
+    ifid 1;
+  };
+{% endfor %}
+};

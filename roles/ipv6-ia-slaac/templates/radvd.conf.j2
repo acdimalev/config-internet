@@ -1,0 +1,7 @@
+{% for interface in interfaces %}
+interface {{ interface }} {
+  AdvSendAdvert on;
+  prefix ::/64 {
+  };
+};
+{% endfor %}
