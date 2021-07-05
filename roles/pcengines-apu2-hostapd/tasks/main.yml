@@ -3,5 +3,5 @@
   notify: restart hostapd
 
 - name: ensure hostapd defaults are up-to-date
-  file: src=etc-default-hostapd dest=/etc/default/hostapd
+  copy: src=etc-default-hostapd dest=/etc/default/hostapd
   notify: restart hostapd
