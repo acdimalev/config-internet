@@ -1,0 +1,2 @@
+- name: ensure ath9k module configuration is up-to-date
+  copy: dest=/etc/modprobe.d/ath9k.conf src=ath9k.conf

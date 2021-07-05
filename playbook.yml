@@ -8,6 +8,8 @@
     # ssid
     passphrase: "{{ wpa_passphrase }}"
 
+  - role: ath9k
+
   - role: nat-masquerade
     interface: eth0
 
